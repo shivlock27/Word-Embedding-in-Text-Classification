@@ -1,0 +1,12 @@
+def crosscorr(x,n):
+    sef=np.zeros((n))
+    for i in range(0,n):
+        sef[i]=i+1
+    for i in range(0,x.shape[1]-1):
+        for j in range(0,x.shape[1]-1):
+            if (np.array(np.where(sef==i)).shape[1]>0 and np.array(np.where(sef==j)).shape[1]>0):
+                if i!=j and (x[i,j]>=0.7 or x[i,j]<=-0.7):
+                    sef[np.array(np.where(sef==j))]=0;       
+    return sef 
+
+

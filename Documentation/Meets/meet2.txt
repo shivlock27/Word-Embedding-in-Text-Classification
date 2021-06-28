@@ -1,0 +1,34 @@
+def civalue(x):
+    mx=np.mean(x)
+    ci=np.zeros((2))
+    ci[0]=mx-1.96*x.std()/math.sqrt(len(x))
+    ci[1]=mx+1.96*x.std()/math.sqrt(len(x))
+    return ci
+
+
+for i in range(0,19):
+    fv=df[:,i]
+    print(in0)
+    civ[i,0:2]=civalue(fv[in0])
+    civ[i,2:4]=civalue(fv[in1])
+    x=np.zeros((2,2))
+    x[0:2,0]=civ[i,0:2]
+    x[0:2,1]=civ[i,2:4]
+    print(x)
+    pyplot.boxplot(x,labels=['Not-Job','JOB'])
+    pyplot.grid(True)
+    pyplot.xlabel('Metrics')
+    pyplot.ylabel('95%CI')
+    fna='C:/Users/lov/Documents/dsv/'+str(i)+".png"
+    pyplot.savefig(fna)
+    pyplot.close()
+
+fname='C:/Users/lov/Documents/spam.csv'
+df=pd.read_csv(fname,header=0,encoding = 'unicode_escape')
+vectorizer = CountVectorizer(ngram_range=(1,2))
+x = vectorizer.fit_transform(df.DescTex)
+x=x.toarray()
+
+Lov Kumar Sir
+8260612874
+7978281455
