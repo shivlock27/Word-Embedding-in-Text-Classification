@@ -1,0 +1,3 @@
+Identifying important classyfying labels using confidence intervals:
+
+Classification label - airline sentiment ( positive, negative and neutral) [3 classes]
